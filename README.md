@@ -1,40 +1,7 @@
-# ScrumLab
-This is a repository dedicated to ScrumLAB front-end project.
+# Meal Planner
+This is my further development of an app I partially developed during a scrum lab. Its goal is to allow the user to store recipes and plan meals for the upcoming week.
 
-## How to start
-To start development follow this instruction:
+## My roadmap so far is:
 
-* `clone` this repo
-* `npm install` all necessary npm packages
-
-
-## Gulp usage
-Avaliable commends for you to type in console:
-
-`gulp` or `gulp serve`  - this will run gulp in browserSync mode, that means gulp will start serwer on your `localhost` and refreash it for you everytime you change `scss`, `js` or `html` file. Using this command will do all the work for you :)
-
-`gulp watch` - runs gulp in watch mode, that will compiles your `custom.scss` into `css/custom.css`
-
-`gulp sass` - compiles sass into CSS & auto-inject into browsers
-
-
-## Folder Structure
-```
-| - development/
-	| - css/      
-	| - fonts/
-	| - images/  
-	| - js/
-	| - scss/
-	| - app.html  
-	| - index.html  
-	| - recipes.html    
-	| - schedules.html
-| - distribution/
-| - package.json
-| - gulpfile.js
-```
-
-***where:***
-`distribution` - is used to contain optimized files for the production site.
-`development`  - is used to contain source code.
+1. Rewrite the app with React.
+2. Hook up firebase to enable authentication and database storage.
