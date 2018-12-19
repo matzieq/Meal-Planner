@@ -1,0 +1,81 @@
+.content-container {
+    width: 380px;
+    margin: 0 auto;
+}
+
+.content {
+    transition: 1s;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    opacity: 0;
+    background: $screen-background-color;
+    border: 1px dashed $side-panel-color;
+    animation: enterFromRight 1s;
+    &.active {
+        left: 5%;
+        // top: 5%;
+        opacity: 1;
+    }
+    h3 {
+        font-size: 50px;
+        color: $text-color;
+    }
+
+    &.user {
+
+        h3 {
+            font-size: 40px;
+            color: $text-color;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        text-align: center;
+        h4 {
+            font-size: 24px;
+            color: $text-color;
+            margin: 20px auto;
+            font-weight: 600;
+        }
+
+        #name {
+            height: 30px;
+            width: 280px;
+            margin-bottom: 20px;
+            display: block;
+            margin: 20px auto;
+            padding: 5px;
+        }
+
+        label {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .send-name {
+            @include appButton();
+        }
+        p {
+            color: $text-color;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    span {
+        display: block;
+        font-size: 20px;
+        color: red;
+        font-weight: 600;
+        margin-top: 60px;
+        transition: 1s;
+        &.inactive {
+            opacity: 0;
+        }
+    }
+
+}
+

@@ -1,0 +1,79 @@
+.main {
+    display: flex;
+    // height: 600px;
+    height: 85%;
+}
+
+.main-side-panel {
+    background: $side-panel-color;
+    // padding: 10px;
+    width: 300px;
+    animation: enterFromLeft 1s;
+}
+
+
+
+.main-side-panel-buttons {
+    display: flex;
+    flex-direction: column;
+    button {
+        color: #fff;
+        text-align: left;
+        height: 80px;
+        font-size: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.4s;
+
+        span {
+            display: inline-block;
+            padding-left: 20px;
+            transition: 0.4s;
+        }    
+        &:before{
+            @include activeLine();
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid transparent;
+            // border-right-color: orange;
+            // border-bottom-color: orange;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%) rotate(-45deg);
+            transition: 1s;
+        }
+        &.active {
+            font-weight: 600;
+            &:after {
+                border-right-color: $btnColor;
+                border-bottom-color: $btnColor;
+            }
+            &:before {
+                background: $btnActiveColor;
+            }
+        }
+        
+        &:hover {
+            background: lighten($side-panel-color, 20);
+        }
+
+        &:active {
+            background: $backgroundNav;
+        }
+    }
+}
+
+.main-content {
+    
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+}

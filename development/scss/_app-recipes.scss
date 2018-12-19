@@ -1,0 +1,180 @@
+
+
+.item-list-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    border-bottom: 1px solid #ddd;
+    h3 {
+        font-size: 30px;
+        color: $btnColor;
+    }
+    i {
+        font-size: 30px;
+    }
+}
+
+.item-list-container {
+    height: 90%;
+    .item-list-table-head {
+        margin: 0;
+        color: $text-color;
+
+        &.actions {
+            text-align: right;
+        }
+    }
+
+    .col-container {
+        height: 90%;
+    }
+
+    .item-list-id {
+        font-size: 20px;
+    }
+    .item-list-name {
+        font-size: 20px;
+    }
+
+    .item-list-description {
+        font-size: 14px;
+    }
+
+    .item-list-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    i {
+        font-size: 30px;
+        padding-left: 10px;
+    }
+
+    .row {
+        border-bottom: 1px solid #ddd;
+        padding: 5px;
+        margin: 5px 20px;
+    }
+
+    .item-list {
+        min-height: 90%;
+        position: relative;
+        .item-list-contents {
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            overflow-y: scroll;
+        }
+    }
+}
+.btnApp {
+  background: $btnColor;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  //margin-bottom: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    background: lighten($btnColor, 20);
+  }
+  &:active {
+    background: $btnColor;
+  }
+}
+.title-recipe {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  #recipe-description {
+    height: 60px;
+    overflow: auto;
+  }
+}
+.add-recipe {
+  border: 1px dashed $text-color;
+  background: $screen-background-color;
+  padding: 30px;
+}
+
+
+.recipe-input-box {
+  width: 500px;
+  margin: 15px 100px 5px 5px;
+}
+.header-recipe {
+  display: flex;
+  justify-content: space-between;
+  &:first-child {
+    color: $btnColor;
+    font-weight: 600;
+    border-bottom: 2px solid $table-text-color;
+  }
+}
+.form-row {
+  .title-recipe {
+    margin-left: 10px;
+  }
+}
+.header-fail {
+  margin-bottom: 50px;
+}
+.section-recipe-One,
+.section-recipe-Two {
+  width: 45%;
+  .form-row-two {
+    display: flex;
+    height: 350px;
+    margin: 10px;
+    flex-direction: column;
+  }
+  .instruction-input-box,
+  .components-input-box {
+    padding: 10px;
+    height: auto;
+    width: 90%;
+  }
+}
+.section-recipe-box {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  .title-recipe {
+    border-bottom: 2px solid $table-text-color;
+  }
+}
+.components-list,
+.instruction-list {
+  padding: 30px;
+  overflow: auto;
+  height: auto;
+}
+//.instruction-input-box:after {
+//  font-family: "Font Awesome 5 Free";
+//  font-weight: 900;
+//  font-size: 150px;
+//  content: "\f00c";
+//  position: absolute;
+//  top: -180px;
+//  right: 80px;
+//  //content: "\f0fe";
+//}
+////<i f0feclass="far fa-plus-square"></i>
+
+.form-row-two-input {
+  align-content: stretch;
+  color: green;
+  margin-bottom: 20px;
+  i {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}

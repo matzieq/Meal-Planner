@@ -1,0 +1,27 @@
+$gap: 10px;
+$column: 7;
+$bp: 768px;
+
+.col-container {
+    display: block;
+    .row {
+        
+        [class*="col-"] {
+            padding-left: $gap;
+            padding-right: $gap;
+            box-sizing: border-box;
+            margin-bottom: 2 * $gap;
+        }
+
+
+        @for $i from 1 through $column {
+            
+            display: flex;
+            .col-#{$i}-#{$column} {
+                width: (100 / $column * $i) * 1%;
+            }
+            
+        }
+        
+    }
+}

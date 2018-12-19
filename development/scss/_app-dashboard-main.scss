@@ -1,0 +1,180 @@
+.content.dashboard {
+    background: none;
+    border: none;
+}
+
+.dashboard-item {
+    position: absolute;
+    // top: 200%;
+    // background: yellow;
+    height: 100%;
+    width: 100%;
+    // z-index: -10;
+    opacity: 0;
+    transition: 0.4s;
+    &.on-top {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.dashboard-main-container {
+    height: 100%;   
+    width: 100%;
+}
+
+.dashboard-main-top-panel {
+    height: 35%;
+    width: 100%;
+    padding-bottom: 40px;
+    // background: olive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button span {
+        margin: 0;
+        font-size: 20px;
+        // padding: 10px;
+        color: $backgroundNav;
+    }
+}
+
+.dashboard-plan-preview {
+    height: 65%;
+    width: 100%;
+    padding: 0 20px;
+    background: $screen-background-color;
+    border: 1px dashed $text-color;
+    .container {
+        width: 100%;
+    }
+
+    .row {
+        width: 100%;
+        border-bottom: 1px solid lighten($text-color, 30);
+        // height: 50px;
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+    .plan-preview-title {
+        font-size: 20px;
+        color: $btnColor;
+        text-align: center;
+        margin: 10px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid lighten($text-color, 30);
+        span {
+            display: inline;
+            color: $btnColor;
+            font-weight: 700;
+        }
+    }
+
+    .week-day {
+        text-align: center;
+        font-size: 18px;
+        color: $text-color;
+    }
+    .buttons span {
+        display: inline;
+    }
+
+    .btn-next, .btn-prev {
+        color: $btnColor;
+        position: absolute;
+        bottom: 10px;
+        cursor: pointer;
+        padding: 0 10px;
+        // line-height: 100%;
+        transition: 0.4s;
+        &:not(.disabled):hover {
+            background: darken(#fff, 10);
+        }
+        &:not(.disabled):active {
+            background: none;
+        }
+        &.disabled {
+            color: #bbb;
+            span {
+                color: #ccc;
+            }
+        }
+    }
+    .btn-prev {
+        left: 10px;
+    }
+    
+    .btn-next {
+        right: 10px;
+    }
+    .plan-meal-list {
+        transition: 0.15s;
+    }
+}
+
+
+#add-recipe, #add-plan, #main {
+    width: 20%;
+    height: 100%;
+    background: white;
+    margin-right: 40px;
+    border: 1px dashed $text-color;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        background: darken(#fff, 10);
+    }
+    &:active {
+        background: transparent;
+    }
+    i {
+        font-size: 80px;
+        margin-bottom: 20px;
+        color: $backgroundNav;
+    }
+}
+
+.notifications {
+    width: 75%;
+    height: 100%;
+    // transition: 0.5s;
+    .notifications-message {
+        font-size: 30px;
+        border: 1px dashed $text-color;
+        background: $screen-background-color;
+        display: block;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 10px;
+        color: $text-color;
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+    }
+    i {
+        padding-right: 10px;
+    }
+
+    .info {
+        color: $info-text-color;
+    }
+
+    .warning {
+        color: $warning-text-color;
+    }
+
+    .success {
+        color: $success-text-color;
+    }
+
+    .fa-window-close {
+        font-size: 20px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
+

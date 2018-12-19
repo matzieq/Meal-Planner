@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:300,400,600,700,800&amp;subset=latin-ext" rel="stylesheet">     
+    <link rel="stylesheet" href="./css/custom.css">
+    
+
+  </head>
+  <body class="app-body">
+    
+    <header class="app-header">
+      <h1 class="logo">
+        <a href="" class="home">
+          <span id="first">Zaplanuj</span>
+          <span id="second">Jedzonko</span>
+        </a>
+      </h1>
+      <div class="app-header-panel">
+          <!-- id przycisków odpowiadają klasom ekranów, które są przez nie uruchamiane
+          np. przycisk o id="user" uruchamia ekran zawierający klasę "user" -->
+          <button id="user" class="button">
+            <div class="name"></div>
+            <i class="far fa-user-circle"></i>
+          </button>
+      </div>
+    </header>
+    <section class="main">
+      <div class="main-side-panel">
+        <div class="main-side-panel-buttons"> 
+          <!-- te przyciski działają tak samo - id odpowiada klasie ekranu
+          klasa button służy do złapania wszystkich przycisków zmieniających ekrany -->
+          <button id="dashboard" class="button"><span>Pulpit</span></button>
+          <button id="recipes" class="button"><span>Przepisy</span></button>
+          <button id="plans" class="button"><span>Plany</span></button>
+        </div>
+        
+      </div>
+      <div class="main-content">
+        <!-- klasa active określa, który ekran jest widoczny -->
+        <!-- zmiana imienia -->
+        <div class="content user active">
+          <div class="content-container">
+              <h3>Witaj,</h3>
+              <h4>Wygląda na to, że jesteś tutaj pierwszy raz!</h4>
+              <form action="">
+                <input id="name" name="name" type="text" placeholder="tutaj wpisz jak masz na imię">
+                <label for="name">Imię</label>
+                <button class="send-name">Gotowe!</button>
+              </form>
+              <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</p>
+              <span class="inactive">Najpierw podaj imię!</span>
+          </div>
+        </div>
+        <!-- pulpit -->
+        <div class="content dashboard">
+          <!-- Klasa on-top określa, który podekran pulpitu jest aktualnie widoczny -->
+          <!-- main (główny pulpit) -->
+          <div class="dashboard-item main on-top">
+            <div class="dashboard-main-container">
+              <div class="dashboard-main-top-panel">
+                <button id="add-recipe">
+                  <div><i class="far fa-plus-square"></i></div>
+                  <span>dodaj przepis</span>
+                </button>
+                <button id="add-plan">
+                  <div><i class="far fa-plus-square"></i></div>
+                  <span>dodaj plan</span>
+                </button>
+                <div class="notifications"></div>
+              </div>
+              <div class="dashboard-plan-preview">
+                <h3 class="plan-preview-title">Twój plan na <span>{nr_tygodnia}</span> tydzień:</h3>
+                <div class="col-container">
+                  <div class="row">
+                    <div class="col-1-7">
+                      <h4 class="week-day">Poniedziałek</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Wtorek</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Środa</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Czwartek</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Piątek</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Sobota</h4>
+                    </div>
+                    <div class="col-1-7">
+                      <h4 class="week-day">Niedziela</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-container plan-meal-list">
+                  
+                </div>
+                <div class="buttons">
+                  <button class="btn-prev disabled"><span>&lt;&lt;</span> poprzedni</button>
+                  <button class="btn-next">następny <span>&gt;&gt;</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- dodaj przepis -->
+          <div class="dashboard-item add-recipe">
+            <!--<h3>Dodaj przepis</h3> -->
+            <!--<button id="main">WSTECZ!!!!</button>-->
+            <div class="header-fail">
+              <div class="header-recipe">
+                <p class="title-recipe">NOWY PRZEPIS</p>
+                <button class="btnApp">Zapisz i zamknij</button>
+              </div>
+              <div class="form-row">
+                <label for="recipe-name" class="title-recipe">Nazwa przepisu</label>
+                <input class="recipe-input-box" type="text" name="nazwa-przepisu" id="recipe-name">
+              </div>
+              <div class="form-row">
+                <label for="recipe-description" class="title-recipe">Opis przepisu</label>
+                <input class="recipe-input-box" type="text" name="nazwa-opis" id="recipe-description">
+              </div>
+            </div>
+            <div class="section-recipe-box">
+              <div class="section-recipe-One">
+                <p class="title-recipe">INSTRUKCJE</p>
+                <div class="form-row-two">
+                  <div class="form-row-two-input">
+                    <input class="instruction-input-box" type="text" name="instrukcja">
+                    <i class="far fa-plus-square add-instruction"></i>
+                  </div>
+                  <ol class="instruction-list">
+                    
+                  </ol>
+                </div>
+              </div>
+              <div class="section-recipe-Two">
+                <p class="title-recipe">SKŁADNIKI</p>
+                <div class="form-row-two">
+                  <div class="form-row-two-input">
+                    <input class="components-input-box" type="text" name="składniki">
+                    <i class="far fa-plus-square add-component"></i>
+                  </div>
+                  <ul class="components-list">
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- dodaj plan -->
+          <div class="dashboard-item add-plan">
+            <h3>Dodaj plan</h3>
+            <button id="main">WSTECZ!!!!</button>
+          </div>
+
+        </div>
+        <!-- przepisy -->
+        <div class="content recipes">
+          <div class="item-list-header">
+            <h3>LISTA PRZEPISÓW</h3>
+            <button id="back-to-add-recipe"><i class="far fa-plus-square"></i></button>
+          </div>
+          <div class="item-list-container">
+            <div class="col-container">
+              <div class="row">
+                  <div class="col-1-7"><span class="item-list-table-head">ID</span></div>
+                  <div class="col-1-7"><span class="item-list-table-head">NAZWA</span></div>
+                  <div class="col-4-7"><span class="item-list-table-head">OPIS</span></div>
+                  <div class="col-1-7"><span class="item-list-table-head actions">AKCJE</span></div>
+              </div>
+              <div class="item-list">
+                <div class="item-list-contents">
+<!-- 
+                  <div class="row">
+                    <div class="col-1-7"><div class="item-list-id">1</div></div>
+                    <div class="col-1-7"><div class="item-list-name">Test</div></div>
+                    <div class="col-4-7">
+                      <div class="item-list-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, voluptas. Consectetur, repellendus quod eveniet dignissimos perferendis commodi ut unde corrupti!
+                      </div>
+                    </div>
+                    <div class="col-1-7">
+                      <div class="item-list-actions">
+                        <button class="edit-recipe"><i class="far fa-edit"></i></button>
+                        <button class="delete-recipe"><i class="far fa-trash-alt"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                   -->
+                </div>        
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- plany -->
+        <div class="content plans">
+            <div class="item-list-header">
+                <h3>LISTA PLANÓW</h3>
+                <button id="back-to-add-plan"><i class="far fa-plus-square"></i></button>
+              </div>
+              <div class="item-list-container">
+                <div class="col-container">
+                  <div class="row">
+                      <div class="col-1-7"><span class="item-list-table-head">ID</span></div>
+                      <div class="col-1-7"><span class="item-list-table-head">NAZWA</span></div>
+                      <div class="col-4-7"><span class="item-list-table-head">OPIS</span></div>
+                      <div class="col-1-7"><span class="item-list-table-head actions">AKCJE</span></div>
+                  </div>
+                  <div class="item-list">
+                    <div class="item-list-contents">
+<!--     
+                      <div class="row">
+                        <div class="col-1-7"><div class="item-list-id">1</div></div>
+                        <div class="col-1-7"><div class="item-list-name">Test</div></div>
+                        <div class="col-4-7">
+                          <div class="item-list-description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, voluptas. Consectetur, repellendus quod eveniet dignissimos perferendis commodi ut unde corrupti!
+                          </div>
+                        </div>
+                        <div class="col-1-7">
+                          <div class="item-list-actions">
+                            <button class="edit-plan"><i class="far fa-edit"></i></button>
+                            <button class="delete-plan"><i class="far fa-trash-alt"></i></button>
+                          </div>
+                        </div>
+                      </div> -->
+                      
+                    </div>        
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/app.js" charset="utf-8"></script>
+  </body>
+</html>

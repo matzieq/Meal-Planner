@@ -1,0 +1,31 @@
+@mixin activeLine {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: 0.4s;
+}
+
+@mixin appButton {
+    background: $btnColor;
+    color: #fff;
+    // text-transform: uppercase;
+    font-size: 20px;
+    padding: 10px 20px;
+    // border-radius: 6px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        background: lighten($btnColor, 20);
+        // border-radius: 6px;
+        // font-size: 22px;
+        // padding: 10px 25px;
+    }
+    &:active {
+        background: $btnColor;
+    }
+}

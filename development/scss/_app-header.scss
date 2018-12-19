@@ -1,0 +1,73 @@
+.app-header {
+    display: flex;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+    // padding-left: 20px;
+    background: $backgroundNav;
+    animation: enterFromAbove 1s ease-out;
+    h1 {
+        height: 100%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+        &:active {
+            background: lighten($backgroundNav, 10);
+        }
+    }
+    a {
+        font-size: 30px;
+        text-decoration: none;
+    }
+}
+
+.app-header-panel {
+    font-size: 25px;
+    // padding: 10px 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    button {
+        height: 100%;
+        line-height: 100%;
+        padding: 0px 20px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-decoration: none;
+        cursor: pointer;
+        // height: 80px;
+        font-size: 50px;
+        transition: 0.4s;
+        position: relative;
+        &:hover {
+            background: lighten($backgroundNav, 20);
+        }
+        
+        &:before {
+            @include activeLine();
+            margin-right: 20px;
+        }
+        &:active {
+            background: $backgroundNav;
+        }
+
+        &.active:before {
+            background: $btnActiveColor;
+        }
+    }
+    
+    .name {
+        font-size: 25px;
+        color: #fff;
+        padding-right: 20px;
+        transition: 0.5s;
+        opacity: 0;
+    }       
+    i {
+        color: $btnActiveColor;
+        transition: 0.4s;
+    }
+}
